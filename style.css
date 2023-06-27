@@ -1,0 +1,84 @@
+:root {
+    --blue-gradient: linear-gradient(rgb(0, 195, 255), rgb(16, 124, 196));
+    --green-gradient:  linear-gradient(rgb(165, 239, 143), rgb(59, 236, 59));
+}
+
+* {
+    /* background-image: var(--blue-gradient); */
+}
+
+body {
+    /* max-height: 100%; */
+    background-image: var(--blue-gradient);
+    /* width: 100%; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: -moz-stack;
+}
+
+nav {
+    border: 2px solid green;
+    background-image: var(--green-gradient);
+    text-align: center;
+    padding: 10px;
+    margin:5px;
+}
+
+.searchSection {
+    border: 2px solid white;
+    margin: 10px;
+    float: left;
+    height: 750px;
+    width: 25%;
+    text-align: center;
+}
+
+#searchBar {
+    width: 70%;
+}
+#submitButton {
+    color: white;
+    background-image: var(--green-gradient);
+}
+
+#submitButton :hover {
+    color: black;
+}
+
+.currentForecast {
+    /* background-color: white; */
+    color: white;
+    padding: 2px;
+    float: right;
+    width: 65%;
+    margin: 5px;
+    border: 2px solid green;
+}
+
+.forecast5day {
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+    width: 65%;
+    padding: 10px;
+    display: none;
+}
+
+.all5Cards {
+    display: flex;
+    margin: 10px;
+
+}
+
+.dayCard {
+    background-image: var(--green-gradient);
+    width: 17%;
+    border: 2px solid black;
+    margin: 5px;
+    height: 300px;
+    text-align: center;
+}
+
+.dayCard p {
+    text-align: left;
+    size: 10px;
+}

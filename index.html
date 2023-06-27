@@ -4,8 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <h1>Weather Dashboard</h1>
+        </nav>
+    </header>
+    <main>
+        <section class="searchSection">
+            <h2>Search for a city</h2>
+            <form action="submit">
+                <input type="text" placeholder="Search" id="searchBar">
+                <br><br>
+                <input type="submit" value="Submit" id="submitButton">
 
+            </form>
+        </section>
+        <section class="currentForecast">
+            <h2>City</h2>
+            <h3>Temperature: </h3>
+            <h3>Wind: </h3>
+            <h3>Humidity: </h3>
+        </section>
+        <section class="forecast5day">
+            <h2>5 Day Forecast</h2>
+            <section class="all5Cards">
+                <section class="dayCard" id="day1">
+                    <h3>Day 1</h3>
+                    <p>Temperature:</p>
+                    <p>Wind: </p>
+                    <p>Humidity: </p>
+                </section>
+                <section class="dayCard" id="day2">
+                    <h3>Day 2</h3>
+                    <p>Temperature:</p>
+                    <p>Wind: </p>
+                    <p>Humidity: </p>
+                </section>
+                <section class="dayCard" id="day3 ">
+                    <h3>Day 3</h3>
+                    <p>Temperature:</p>
+                    <p>Wind: </p>
+                    <p>Humidity: </p>
+                </section>
+                <section class="dayCard" id="day4">
+                    <h3>Day 4</h3>
+                    <p>Temperature:</p>
+                    <p>Wind: </p>
+                    <p>Humidity: </p>
+                </section>
+                <section class="dayCard" id="day5">
+                    <h3>Day 5</h3>
+                    <p>Temperature:</p>
+                    <p>Wind: </p>
+                    <p>Humidity: </p>
+                </section>
+            </section>
+        </section>
+
+    </main>
 </body>
 </html>
