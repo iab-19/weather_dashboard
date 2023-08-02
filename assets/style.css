@@ -5,14 +5,19 @@
 
 * {
     /* background-image: var(--blue-gradient); */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     /* max-height: 100%; */
+    /* background-image: url("wallpaper2.jpg"); */
     background-image: var(--blue-gradient);
     /* width: 100%; */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: -moz-stack;
+    /* margin: 0; */
 }
 
 nav {
@@ -23,6 +28,9 @@ nav {
     margin:5px;
 }
 
+h2 {
+    color: white;
+}
 .searchSection {
     border: 2px solid white;
     margin: 10px;

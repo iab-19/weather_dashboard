@@ -4,6 +4,8 @@ city = 'London';
 // city = document.getElementById('searchBar');
 var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + APIKey;
 
-var data = fetch(queryURL);
-console.log(data);
-fetch(queryURL);
+
+fetch(queryURL)
+    .then(response => response.json())
+    .then(data => console.log(data))
+.catch(err => alert("Wrong city name"))
