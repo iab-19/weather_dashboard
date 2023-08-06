@@ -13,7 +13,8 @@
 body {
     /* max-height: 100%; */
     /* background-image: url("wallpaper2.jpg"); */
-    background-image: var(--blue-gradient);
+    /* background-image: var(--blue-gradient); */
+    background-color: rgb(28, 28, 119);
     /* width: 100%; */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: -moz-stack;
@@ -21,8 +22,9 @@ body {
 }
 
 nav {
-    border: 2px solid green;
-    background-image: var(--green-gradient);
+    border: 1px solid green;
+    /* background-image: var(--green-gradient); */
+    background-color: lightgrey;
     text-align: center;
     padding: 10px;
     margin:5px;
