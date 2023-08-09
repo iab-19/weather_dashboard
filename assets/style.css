@@ -6,7 +6,7 @@
 * {
     /* background-image: var(--blue-gradient); */
     margin: 0;
-    padding: 0;
+    padding: 2px;
     box-sizing: border-box;
 }
 
@@ -45,9 +45,27 @@ h2 {
 #searchBar {
     width: 70%;
 }
+
+button {
+    width: 70%;
+    background-color: goldenrod;
+    margin: 2px;
+    border: 0.5px solid whitesmoke;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
 #submitButton {
     color: white;
-    background-image: var(--green-gradient);
+    width: 55%;
+    /* background-image: var(--green-gradient); */
+    background-color: black;
+    border: 1px solid white;
 }
 
 #submitButton :hover {
@@ -61,7 +79,7 @@ h2 {
     float: right;
     width: 65%;
     margin: 5px;
-    border: 2px solid green;
+    border: 2px solid goldenrod;
 }
 
 .forecast5day {
@@ -70,18 +88,20 @@ h2 {
     display: inline-block;
     width: 65%;
     padding: 10px;
-    display: none;
 }
 
 .all5Cards {
     display: flex;
+    flex-direction: row;
     margin: 10px;
+    padding: 10px;
 
 }
 
 .dayCard {
-    background-image: var(--green-gradient);
-    width: 17%;
+    /* background-image: var(--green-gradient); */
+    background-color: goldenrod;
+    width: 19%;
     border: 2px solid black;
     margin: 5px;
     height: 300px;
@@ -91,4 +111,8 @@ h2 {
 .dayCard p {
     text-align: left;
     size: 10px;
+}
+
+.hide {
+    display: none;
 }
