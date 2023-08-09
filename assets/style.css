@@ -99,7 +99,6 @@ ul {
 }
 
 .dayCard {
-    /* background-image: var(--green-gradient); */
     background-color: goldenrod;
     width: 19%;
     border: 2px solid black;
