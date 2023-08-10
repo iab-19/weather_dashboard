@@ -8,6 +8,13 @@ const currentHumidity = document.querySelector('#currentHumidity'); // Select th
 const ulSelector = document.querySelector('#cityButton'); // Select the button to show the weather conditions for
 const fiveDay = document.querySelector('.forecast5day'); // Select the 5 day forecase section
 
+// Select the titles for days 1 to 5
+const day1titleSelector = document.querySelector('#day1title');
+const day2titleSelector = document.querySelector('#day2title');
+const day3titleSelector = document.querySelector('#day3title');
+const day4titleSelector = document.querySelector('#day4title');
+const day5titleSelector = document.querySelector('#day5title');
+
 // Select the temperature for days 1 to 5
 const day1tempSelector = document.querySelector('#day1temp');
 const day2tempSelector = document.querySelector('#day2temp');
@@ -47,7 +54,7 @@ function searchHistoryTrigger() {
 
 async function fetchData(city) {
 
-    let currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=imperial`;
+    let currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`;
 
     try {
         // Current Weather
@@ -79,7 +86,7 @@ async function fetchData(city) {
         let lon = data.coord.lon;
         let lat = data.coord.lat;
 
-        currentCity.innerHTML = `Location: ${location}, ${weatherDescription}`;
+        currentCity.innerHTML = `${location}, ${weatherDescription} <img id="icon" src="http://openweathermap.org/img/w/${weatherIcon}.png"/>`;
 
         // const tempNode = document.createTextNode(`Temperature: ${temperature}℉`);
         currentTemp.innerHTML = `Temperature: ${temperature}℉`;
@@ -98,44 +105,55 @@ async function fetchData(city) {
         const nestedData = await nestedResponse.json();
 
         // Day 1
+        const day1title = nestedData.list[9].dt_txt.slice(0, 10);
         const day1temp = nestedData.list[9].main.temp;
         const day1wind = nestedData.list[9].wind.speed;
         const day1humidity = nestedData.list[9].main.humidity;
+        day1titleSelector.innerHTML = day1title;
         day1tempSelector.innerHTML = `Temp: ${day1temp}℉`;
         day1windSelector.innerHTML = `Wind: ${day1wind}mph`;
         day1humiditySelector.innerHTML = `Humidity: ${day1humidity}%`;
 
         // Day 2
+        const day2title = nestedData.list[17].dt_txt.slice(0, 10);
         const day2temp = nestedData.list[17].main.temp;
         const day2wind = nestedData.list[17].wind.speed;
         const day2humidity = nestedData.list[17].main.humidity;
+        day2titleSelector.innerHTML = day2title;
         day2tempSelector.innerHTML = `Temp: ${day2temp}℉`;
         day2windSelector.innerHTML = `Wind: ${day2wind}mph`;
         day2humiditySelector.innerHTML = `Humidity: ${day2humidity}%`;
 
         // Day 3
+        const day3title = nestedData.list[25].dt_txt.slice(0, 10);
         const day3temp = nestedData.list[25].main.temp;
         const day3wind = nestedData.list[25].wind.speed;
         const day3humidity = nestedData.list[25].main.humidity;
+        day3titleSelector.innerHTML = day3title;
         day3tempSelector.innerHTML = `Temp: ${day3temp}℉`;
         day3windSelector.innerHTML = `Wind: ${day3wind}mph`;
         day3humiditySelector.innerHTML = `Humidity: ${day3humidity}%`;
 
         // Day 4
+        const day4title = nestedData.list[33].dt_txt.slice(0, 10);
         const day4temp = nestedData.list[33].main.temp;
         const day4wind = nestedData.list[33].wind.speed;
         const day4humidity = nestedData.list[33].main.humidity;
+        day4titleSelector.innerHTML = day4title;
         day4tempSelector.innerHTML = `Temp: ${day4temp}℉`;
         day4windSelector.innerHTML = `Wind: ${day4wind}mph`;
         day4humiditySelector.innerHTML = `Humidity: ${day4humidity}%`;
 
         // Day 5
+        const day5title = nestedData.list[39].dt_txt.slice(0, 10);
         const day5temp = nestedData.list[39].main.temp;
         const day5wind = nestedData.list[39].wind.speed;
         const day5humidity = nestedData.list[39].main.humidity;
+        day5titleSelector.innerHTML = day5title;
         day5tempSelector.innerHTML = `Temp: ${day5temp}℉`;
         day5windSelector.innerHTML = `Wind: ${day5wind} mph`;
         day5humiditySelector.innerHTML = `Humidity: ${day5humidity}%`;
+        console.log(nestedData.list[0].dt_txt.slice(0, 10));
 
         console.log(nestedData);
         fiveDay.classList.remove('hide');
