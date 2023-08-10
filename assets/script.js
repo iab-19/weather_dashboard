@@ -1,5 +1,4 @@
 const APIKey = 'cb4f2678290f12a8cbfdfaa638ab9e93'; // API key
-// const dayjs = require('dayjs');
 const submitButton = document.getElementById('submitButton'); // Select the submit button
 const textBox = document.querySelector('#searchBar'); // Select the text box
 const currentCity = document.querySelector('#city'); // Select the city
@@ -10,11 +9,9 @@ const ulSelector = document.querySelector('#cityButton'); // Select the button t
 const fiveDay = document.querySelector('.forecast5day'); // Select the 5 day forecase section
 
 
-// import dayjs from "dayjs";
-var currentDate = dayjs().format('(MM/DD/YY)');
-console.log(currentDate);
 
-// dayjs('2018-04-04T16:00:00.000Z')
+var currentDate = dayjs().format('(YYYY-MM-DD)');
+
 
 // Select the titles for days 1 to 5
 const day1titleSelector = document.querySelector('#day1title');
@@ -80,6 +77,7 @@ async function fetchData(city) {
             li.append(button);
             ulSelector.append(li);
         }
+        // Taking data from fetch call and saving to variables
         const temperature = data.main.temp;
         const weatherDescription = data.weather[0].description;
         const weatherIcon = data.weather[0].icon;
@@ -94,6 +92,7 @@ async function fetchData(city) {
         let lon = data.coord.lon;
         let lat = data.coord.lat;
 
+        // Applying current weather data to html file
         currentCity.innerHTML = `${location}, ${currentDate} <img id="icon" src="http://openweathermap.org/img/w/${weatherIcon}.png"/>`;
         currentTemp.innerHTML = `Temperature: ${temperature}℉`;
         currentWind.innerHTML = `Wind Speed: ${windSpeed} miles/hour`;
@@ -109,7 +108,7 @@ async function fetchData(city) {
         const day1temp = nestedData.list[9].main.temp;
         const day1wind = nestedData.list[9].wind.speed;
         const day1humidity = nestedData.list[9].main.humidity;
-        day1titleSelector.innerHTML = `${day1title} <img id="icon" src="http://openweathermap.org/img/w/${day1icon}.png"/>`;
+        day1titleSelector.innerHTML = `${day1title}<br> <img id="icon" src="http://openweathermap.org/img/w/${day1icon}.png"/>`;
         day1tempSelector.innerHTML = `Temp: ${day1temp}℉`;
         day1windSelector.innerHTML = `Wind: ${day1wind}mph`;
         day1humiditySelector.innerHTML = `Humidity: ${day1humidity}%`;
@@ -120,7 +119,7 @@ async function fetchData(city) {
         const day2temp = nestedData.list[17].main.temp;
         const day2wind = nestedData.list[17].wind.speed;
         const day2humidity = nestedData.list[17].main.humidity;
-        day2titleSelector.innerHTML = `${day2title} <img id="icon" src="http://openweathermap.org/img/w/${day2icon}.png"/>`;
+        day2titleSelector.innerHTML = `${day2title}<br> <img id="icon" src="http://openweathermap.org/img/w/${day2icon}.png"/>`;
         day2tempSelector.innerHTML = `Temp: ${day2temp}℉`;
         day2windSelector.innerHTML = `Wind: ${day2wind}mph`;
         day2humiditySelector.innerHTML = `Humidity: ${day2humidity}%`;
@@ -131,7 +130,7 @@ async function fetchData(city) {
         const day3temp = nestedData.list[25].main.temp;
         const day3wind = nestedData.list[25].wind.speed;
         const day3humidity = nestedData.list[25].main.humidity;
-        day3titleSelector.innerHTML = `${day3title} <img id="icon" src="http://openweathermap.org/img/w/${day3icon}.png"/>`;
+        day3titleSelector.innerHTML = `${day3title}<br> <img id="icon" src="http://openweathermap.org/img/w/${day3icon}.png"/>`;
         day3tempSelector.innerHTML = `Temp: ${day3temp}℉`;
         day3windSelector.innerHTML = `Wind: ${day3wind}mph`;
         day3humiditySelector.innerHTML = `Humidity: ${day3humidity}%`;
@@ -142,7 +141,7 @@ async function fetchData(city) {
         const day4temp = nestedData.list[33].main.temp;
         const day4wind = nestedData.list[33].wind.speed;
         const day4humidity = nestedData.list[33].main.humidity;
-        day4titleSelector.innerHTML = `${day4title} <img id="icon" src="http://openweathermap.org/img/w/${day4icon}.png"/>`;
+        day4titleSelector.innerHTML = `${day4title}<br> <img id="icon" src="http://openweathermap.org/img/w/${day4icon}.png"/>`;
         day4tempSelector.innerHTML = `Temp: ${day4temp}℉`;
         day4windSelector.innerHTML = `Wind: ${day4wind}mph`;
         day4humiditySelector.innerHTML = `Humidity: ${day4humidity}%`;
@@ -153,7 +152,7 @@ async function fetchData(city) {
         const day5temp = nestedData.list[39].main.temp;
         const day5wind = nestedData.list[39].wind.speed;
         const day5humidity = nestedData.list[39].main.humidity;
-        day5titleSelector.innerHTML = `${day5title} <img id="icon" src="http://openweathermap.org/img/w/${day5icon}.png"/>`;
+        day5titleSelector.innerHTML = `${day5title}<br> <img id="icon" src="http://openweathermap.org/img/w/${day5icon}.png"/>`;
         day5tempSelector.innerHTML = `Temp: ${day5temp}℉`;
         day5windSelector.innerHTML = `Wind: ${day5wind} mph`;
         day5humiditySelector.innerHTML = `Humidity: ${day5humidity}%`;

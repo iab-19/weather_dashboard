@@ -22,8 +22,7 @@ body {
 }
 
 nav {
-    border: 1px solid green;
-    /* background-image: var(--green-gradient); */
+    /* border: 1px solid green; */
     background-color: lightgrey;
     text-align: center;
     padding: 10px;
@@ -34,7 +33,7 @@ h2 {
     color: white;
 }
 .searchSection {
-    border: 2px solid white;
+    /* border: 2px solid white; */
     margin: 10px;
     float: left;
     height: 750px;
@@ -69,7 +68,8 @@ ul {
 }
 
 #submitButton :hover {
-    color: black;
+    color: yellow;
+    background-color: blue;
 }
 
 .currentForecast {
@@ -79,11 +79,11 @@ ul {
     float: right;
     width: 65%;
     margin: 5px;
-    border: 2px solid goldenrod;
+    /* border: 2px solid goldenrod; */
 }
 
 .forecast5day {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: 10px;
     display: inline-block;
     width: 65%;
@@ -105,6 +105,7 @@ ul {
     margin: 5px;
     height: 300px;
     text-align: center;
+    font-size: 25px;
 }
 
 .dayCard p {
